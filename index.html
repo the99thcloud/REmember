@@ -73,6 +73,15 @@
             background-color: #A08FB0;
             border: 4px solid #F5F3F7;
         }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+            min-height: 300px;
+        }
 
         .lang-btn {
             padding: 6px 14px;
@@ -148,6 +157,10 @@
                 border-color: #F5F3F7 !important;
             }
             
+            .chart-container { 
+                padding: 1rem;
+            }
+
             .print-only {
                 display: block !important;
             }
@@ -193,7 +206,10 @@
                     <a data-target="overview" class="nav-link"><span class="lang-zh">企劃總覽</span><span class="lang-ko">기획 개요</span></a>
                     <a data-target="on-site" class="nav-link"><span class="lang-zh">現場應援</span><span class="lang-ko">현장 서포트</span></a>
                     <a data-target="backstage" class="nav-link"><span class="lang-zh">後台應援</span><span class="lang-ko">백스테이지</span></a>
+                    <a data-target="fundraising" class="nav-link"><span class="lang-zh">募資計畫</span><span class="lang-ko">펀딩 계획</span></a>
+                    <a data-target="manpower" class="nav-link"><span class="lang-zh">人力規劃</span><span class="lang-ko">인력 계획</span></a>
                     <a data-target="team-info" class="nav-link"><span class="lang-zh">團隊資訊</span><span class="lang-ko">팀 정보</span></a>
+                    <a data-target="timeline" class="nav-link"><span class="lang-zh">執行時程</span><span class="lang-ko">실행 일정</span></a>
                     <a onclick="window.print()" class="nav-link print-button flex items-center space-x-2 bg-accent-light text-accent-dark hover:bg-accent hover:text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
                         <span><span class="lang-zh">列印</span><span class="lang-ko">인쇄</span></span>
@@ -215,7 +231,10 @@
             <a data-target="overview" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">企劃總覽</span><span class="lang-ko">기획 개요</span></a>
             <a data-target="on-site" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">現場應援</span><span class="lang-ko">현장 서포트</span></a>
             <a data-target="backstage" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">後台應援</span><span class="lang-ko">백스테이지</span></a>
+            <a data-target="fundraising" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">募資計畫</span><span class="lang-ko">펀딩 계획</span></a>
+            <a data-target="manpower" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">人力規劃</span><span class="lang-ko">인력 계획</span></a>
             <a data-target="team-info" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">團隊資訊</span><span class="lang-ko">팀 정보</span></a>
+            <a data-target="timeline" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">執行時程</span><span class="lang-ko">실행 일정</span></a>
             <a onclick="window.print()" class="block py-2 px-4 text-sm nav-link print-button text-center"><span class="lang-zh">列印/存成PDF</span><span class="lang-ko">인쇄/PDF 저장</span></a>
             <div id="lang-switcher-mobile" class="flex justify-center items-center border border-gray-200 rounded-full mt-2 mx-auto w-fit p-0.5">
                 <button data-lang="zh" class="lang-btn active">繁中</button>
@@ -335,14 +354,126 @@
                 <h2 class="section-title font-serif"><span class="lang-zh">III. 後台應援</span><span class="lang-ko">III. 백스테이지 서포트</span></h2>
                 <div class="card">
                      <h3 class="text-2xl font-bold text-accent-dark mb-4 font-serif text-center"><span class="lang-zh">預計方案</span><span class="lang-ko">예상 방안</span></h3>
-                     <p class="text-gray-700"><span class="lang-zh">為向藝人與團隊表達最誠摯的歡迎與感謝，我們預計規劃餐飲及特色獻禮的後台應援。所有項目的具體內容與執行細節，將在募資成功後，與主辦單位及經紀方進行密切溝通，並依其需求與規定進行最終確認與調整，確保應援活動能以最貼心、最完善的方式呈現。</span><span class="lang-ko">아티스트와 스태프에게 진심 어린 환영과 감사를 표하기 위해, 케이터링 및 특별 선물로 구성된 백스테이지 서포트를 기획하고 있습니다. 모든 항목의 구체적인 내용과 실행 세부 사항은 펀딩 성공 후, 주최 측 및 소속사와 긴밀히 소통하여 그들의 요구와 규정에 따라 최종 확인 및 조정을 거칠 예정입니다. 이를 통해 서포트가 가장 세심하고 완벽한 방식으로 전달될 수 있도록 하겠습니다.</span></p>
+                     <p class="text-gray-700"><span class="lang-zh">為向藝人與團隊表達最誠摯的歡迎與感謝，我們預計規劃餐飲及特色獻禮的後台應援。所有項目的具體內容與執行細節，將在募資達到第二、三階段目標後，與主辦單位及經紀方進行密切溝通，並依其需求與規定進行最終確認與調整，確保應援活動能以最貼心、最完善的方式呈現。</span><span class="lang-ko">아티스트와 스태프에게 진심 어린 환영과 감사를 표하기 위해, 케이터링 및 특별 선물로 구성된 백스테이지 서포트를 기획하고 있습니다. 모든 항목의 구체적인 내용과 실행 세부 사항은 펀딩 2, 3단계 목표 달성 후, 주최 측 및 소속사와 긴밀히 소통하여 그들의 요구와 규정에 따라 최종 확인 및 조정을 거칠 예정입니다. 이를 통해 서포트가 가장 세심하고 완벽한 방식으로 전달될 수 있도록 하겠습니다.</span></p>
                 </div>
             </section>
         </div>
 
         <div class="print-page">
+            <section id="fundraising" class="scroll-mt-20 p-0">
+                <h2 class="section-title font-serif"><span class="lang-zh">IV. 募資計畫</span><span class="lang-ko">IV. 펀딩 계획</span></h2>
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-accent-dark mb-4 font-serif"><span class="lang-zh">金額細估與階段式募資</span><span class="lang-ko">예산 상세 및 단계별 펀딩</span></h3>
+                    <p class="mb-6 text-gray-700"><span class="lang-zh">為確保計畫執行順利並提高資金運用的透明度，我們將募資分為三階段。以場館人數450人為基礎進行初步估算：</span><span class="lang-ko">프로젝트의 원활한 진행과 자금 사용의 투명성을 높이기 위해, 펀딩을 세 단계로 나누어 진행합니다. 공연장 수용 인원 450명을 기준으로 초기 예산을 다음과 같이 추산합니다:</span></p>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第一階段：核心現場應援 (目標估算：NT$ 9,013)</span><span class="lang-ko">1단계: 핵심 현장 서포트 (목표 예상액: NT$ 9,013)</span></h4>
+                            <p class="text-sm text-gray-600"><span class="lang-zh">此階段為必要應援項目，確保所有入場粉絲都能參與。</span><span class="lang-ko">이 단계는 필수 서포트 항목으로, 모든 입장 관객이 참여할 수 있도록 보장합니다.</span></p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700">
+                                <li><span class="lang-zh">全場手幅 (估算450份 x NT$10/份) = NT$ 4,500</span><span class="lang-ko">전체 슬로건 (예상 450개 x NT$10/개) = NT$ 4,500</span></li>
+                                <li><span class="lang-zh">綠色玻璃紙 (1大張) = NT$ 13</span><span class="lang-ko">초록색 셀로판지 (1장) = NT$ 13</span></li>
+                                <li><strong><span class="lang-zh">行政與雜支 = NT$ 4,500</span><span class="lang-ko">행정 및 기타 비용 = NT$ 4,500</span></strong>
+                                    <ul class="list-['\2013'] list-inside ml-4 text-sm">
+                                        <li><span class="lang-zh">文宣印刷費 (現場公告等): NT$ 1,000</span><span class="lang-ko">안내문 인쇄비 (현장 공지 등): NT$ 1,000</span></li>
+                                        <li><span class="lang-zh">應援物包材費 (分裝袋、膠帶等): NT$ 1,500</span><span class="lang-ko">서포트 물품 포장재비 (개별 포장 봉투, 테이프 등): NT$ 1,500</span></li>
+                                        <li><span class="lang-zh">物流與交通費: NT$ 1,000</span><span class="lang-ko">물류 및 교통비: NT$ 1,000</span></li>
+                                        <li><span class="lang-zh">預備金: NT$ 1,000</span><span class="lang-ko">예비비: NT$ 1,000</span></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第二階段：後台餐飲應援 (目標估算：NT$ 10,000)</span><span class="lang-ko">2단계: 백스테이지 간식 및 음료 서포트 (목표 예상액: NT$ 10,000)</span></h4>
+                            <p class="text-sm text-gray-600"><span class="lang-zh">第一階段達標後開啟，為藝人與韓方工作人員（約50位）準備台灣特色點心與飲品。</span><span class="lang-ko">1단계 목표 달성 후 시작되며, 아티스트와 한국 스태프(약 50명)를 위한 대만 특색 간식과 음료를 준비합니다.</span></p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700">
+                                <li><span class="lang-zh">台灣特色零食 (鳳梨酥、義美小泡芙、義美葡萄球巧克力等) = NT$ 5,000</span><span class="lang-ko">대만 특색 간식 (펑리수, 이메이 퍼프, 이메이 포도알 초콜릿 등) = NT$ 5,000</span></li>
+                                <li><span class="lang-zh">手搖飲品 (50嵐、一沐日等，約50杯) = NT$ 5,000</span><span class="lang-ko">버블티 음료 (50란, 이무르 등, 약 50잔) = NT$ 5,000</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第三階段：後台獻禮與募資回饋品 (目標估算：NT$ 32,000)</span><span class="lang-ko">3단계: 백스테이지 선물 및 펀딩 리워드 (목표 예상액: NT$ 32,000)</span></h4>
+                            <p class="text-sm text-gray-600"><span class="lang-zh">第二階段達標後開啟，旨在提供更完善的支持與感謝。</span><span class="lang-ko">2단계 목표 달성 후 시작되며, 더 완벽한 지원과 감사를 표하기 위함입니다.</span></p>
+                            <ul class="list-disc list-inside mt-2 text-gray-700">
+                                <li><span class="lang-zh">後台特色獻禮 (如：佳德鳳梨酥、鼎泰豐禮品，主要贈予藝人) = NT$ 15,000</span><span class="lang-ko">백스테이지 특별 선물 (예: 치아더 펑리수, 딘타이펑 선물 세트 등, 주로 아티스트에게 증정) = NT$ 15,000</span></li>
+                                <li><span class="lang-zh">募資回饋品製作 (預算) = NT$ 15,000</span><span class="lang-ko">펀딩 리워드 제작 (예산) = NT$ 15,000</span></li>
+                                <li><span class="lang-zh">追加雜支 (預估) = NT$ 2,000</span><span class="lang-ko">추가 기타 비용 (예상) = NT$ 2,000</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-sm text-gray-500"><span class="lang-zh">*所有款項將公開透明，並於活動結束後公布詳細財報。集資若有餘額，將全數以RESCENE名義捐贈予公益團體，或保留至下次專場使用，屆時會再進行公告與投票。</span><span class="lang-ko">*모든 자금 내역은 투명하게 공개되며, 행사 종료 후 상세 정산 보고서를 공지할 예정입니다. 펀딩 후 남은 금액은 전액 RESCENE의 이름으로 공익 단체에 기부하거나, 다음 단독 행사를 위해 이월되며, 이 경우 추후 공지 및 투표를 통해 결정됩니다.</span></p>
+                </div>
+            </section>
+        </div>
+        <div class="print-page">
+            <section class="p-0">
+                <h2 class="section-title font-serif print-only"><span class="lang-zh">IV. 募資計畫</span><span class="lang-ko">IV. 펀딩 계획</span></h2>
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-accent-dark mb-4 text-center font-serif"><span class="lang-zh">總預算細項 (估算)</span><span class="lang-ko">총 예산 상세 (예상)</span></h3>
+                     <div class="space-y-4">
+                        <div>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第一階段 (總計: NT$ 9,013)</span><span class="lang-ko">1단계 (총액: NT$ 9,013)</span></h4>
+                            <ul class="mt-2 space-y-2 text-gray-700">
+                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">全場手幅 (450份)</span><span class="lang-ko">전체 슬로건 (450개)</span></span><span class="font-semibold">NT$ 4,500</span></li>
+                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">綠色玻璃紙 (1大張)</span><span class="lang-ko">초록색 셀로판지 (1장)</span></span><span class="font-semibold">NT$ 13</span></li>
+                                <li class="flex justify-between"><span><span class="lang-zh">行政與雜支</span><span class="lang-ko">행정 및 기타 비용</span></span><span class="font-semibold">NT$ 4,500</span></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第二階段 (總計: NT$ 10,000)</span><span class="lang-ko">2단계 (총액: NT$ 10,000)</span></h4>
+                             <ul class="mt-2 space-y-2 text-gray-700">
+                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">台灣特色零食 (4-5種)</span><span class="lang-ko">대만 특색 간식 (4-5종)</span></span><span class="font-semibold">NT$ 5,000</span></li>
+                                <li class="flex justify-between"><span><span class="lang-zh">手搖飲品 (約50杯)</span><span class="lang-ko">버블티 음료 (약 50잔)</span></span><span class="font-semibold">NT$ 5,000</span></li>
+                            </ul>
+                        </div>
+                         <div>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第三階段 (總計: NT$ 32,000)</span><span class="lang-ko">3단계 (총액: NT$ 32,000)</span></h4>
+                             <ul class="mt-2 space-y-2 text-gray-700">
+                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">藝人獻禮 (佳德/鼎泰豐等)</span><span class="lang-ko">아티스트 선물 (치아더/딘타이펑 등)</span></span><span class="font-semibold">NT$ 15,000</span></li>
+                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">募資回饋品製作</span><span class="lang-ko">펀딩 리워드 제작</span></span><span class="font-semibold">NT$ 15,000</span></li>
+                                <li class="flex justify-between"><span><span class="lang-zh">追加雜支 (包裝/交通等)</span><span class="lang-ko">추가 기타 비용 (포장/교통 등)</span></span><span class="font-semibold">NT$ 2,000</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="print-page">
+            <section class="p-0">
+                <h2 class="section-title font-serif print-only"><span class="lang-zh">IV. 募資計畫</span><span class="lang-ko">IV. 펀딩 계획</span></h2>
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-accent-dark mb-4 text-center font-serif"><span class="lang-zh">預算總覽 (估算)</span><span class="lang-ko">예산 개요 (예상)</span></h3>
+                    <div class="chart-container">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="print-page">
+            <section id="manpower" class="scroll-mt-20 p-0">
+                <h2 class="section-title font-serif"><span class="lang-zh">VI. 人力規劃與任務分配</span><span class="lang-ko">VI. 인력 계획 및 업무 분담</span></h2>
+                <div class="card space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">核心管理與分工</span><span class="lang-ko">핵심 운영 및 업무 분담</span></h3>
+                        <p class="mb-4 text-gray-700"><span class="lang-zh">為確保企劃順利推進，團隊已完成初步任務分配，各組負責人與成員如下：</span><span class="lang-ko">프로젝트의 원활한 진행을 위해 팀은 초기 업무 분담을 완료했으며, 각 팀의 책임자와 구성원은 다음과 같습니다:</span></p>
+                        <ul class="space-y-4 list-none text-gray-700">
+                            <li><strong><span class="lang-zh">總召 (2人):</span><span class="lang-ko">총괄 (2명):</span></strong> <span class="lang-zh">莫莫、熊熊</span><span class="lang-ko">모모, 슝슝</span><br><span class="text-sm text-gray-500"><span class="lang-zh">專案總負責，對内協調各組工作、掌握進度，對外代表團隊溝通。</span><span class="lang-ko">프로젝트 총괄 책임자, 내부적으로 팀 조율 및 진행 상황 관리, 외부적으로 팀 대표하여 소통.</span></span></li>
+                            <li><strong><span class="lang-zh">財務 (1人):</span><span class="lang-ko">재무 (1명):</span></strong> <span class="lang-zh">Www</span><span class="lang-ko">Www</span><br><span class="text-sm text-gray-500"><span class="lang-zh">管理募資帳戶、記錄收支、製作財報，確保資金透明。</span><span class="lang-ko">펀딩 계좌 관리, 수입/지출 기록, 재무 보고서 작성 및 자금 투명성 확보.</span></span></li>
+                            <li><strong><span class="lang-zh">公關/宣傳組 (2人):</span><span class="lang-ko">홍보/마케팅팀 (2명):</span></strong> <span class="lang-zh">kgy.、璿</span><span class="lang-ko">kgy., 璿</span><br><span class="text-sm text-gray-500"><span class="lang-zh">負責社群平台文案撰寫、公告發布、應援教學製作、回覆粉絲問題。</span><span class="lang-ko">소셜 미디어 게시물 작성, 공지 발표, 서포트 가이드 제작 및 팬 문의 응대.</span></span></li>
+                             <li><strong><span class="lang-zh">設計組 (2人):</span><span class="lang-ko">디자인팀 (2명):</span></strong> <span class="lang-zh">echo、薰</span><span class="lang-ko">echo, 薰</span><br><span class="text-sm text-gray-500"><span class="lang-zh">負責手幅、募資回饋品、宣傳圖文等所有視覺設計。</span><span class="lang-ko">슬로건, 펀딩 리워드, 홍보 이미지 등 모든 시각 디자인 담당.</span></span></li>
+                            <li><strong><span class="lang-zh">影片組 (2人):</span><span class="lang-ko">영상팀 (2명):</span></strong> <span class="lang-zh">kgy.、妮妮妮</span><span class="lang-ko">kgy., 妮妮妮</span><br><span class="text-sm text-gray-500"><span class="lang-zh">負責應援影片的素材整理、剪輯、配樂與後製。</span><span class="lang-ko">서포트 영상 자료 정리, 편집, 배경 음악 및 후반 작업 담당.</span></span></li>
+                             <li><strong><span class="lang-zh">現場組 (3人):</span><span class="lang-ko">현장팀 (3명):</span></strong> <span class="lang-zh">lyh、璿、妮妮妮</span><span class="lang-ko">lyh, 璿, 妮妮妮</span><br><span class="text-sm text-gray-500"><span class="lang-zh">活動當天負責應援物分裝、發放、秩序維持及後台應援物遞交。</span><span class="lang-ko">공연 당일 서포트 물품 포장, 배부, 질서 유지 및 백스테이지 물품 전달 담당.</span></span></li>
+                             <li><strong><span class="lang-zh">機動組 (2人):</span><span class="lang-ko">기동팀 (2명):</span></strong> <span class="lang-zh">Solo、_iove.tz</span><span class="lang-ko">Solo, _iove.tz</span><br><span class="text-sm text-gray-500"><span class="lang-zh">支援各組臨時任務、處理突發狀況，補足團隊臨時人力缺口。</span><span class="lang-ko">각 팀의 임시 업무 지원, 돌발 상황 처리 및 임시 인력 공백 보충.</span></span></li>
+                              <li><strong><span class="lang-zh">翻譯組:</span><span class="lang-ko">번역팀:</span></strong> <span class="lang-zh">招募中</span><span class="lang-ko">모집 중</span><br><span class="text-sm text-gray-500"><span class="lang-zh">負責所有對內及對外文件的中韓文翻譯。</span><span class="lang-ko">모든 내부 및 외부 문서의 중-한 번역 담당.</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="print-page">
             <section id="team-info" class="scroll-mt-20 p-0">
-                <h2 class="section-title font-serif"><span class="lang-zh">IV. 團隊資訊</span><span class="lang-ko">IV. 팀 정보</span></h2>
+                <h2 class="section-title font-serif"><span class="lang-zh">VII. 團隊資訊</span><span class="lang-ko">VII. 팀 정보</span></h2>
                 <div class="card">
                     <ul class="space-y-4 text-gray-800">
                         <li class="flex flex-col sm:flex-row">
@@ -367,6 +498,44 @@
                 </div>
             </section>
         </div>
+
+        <div class="print-page">
+            <section id="timeline" class="scroll-mt-20 p-0">
+                <h2 class="section-title font-serif"><span class="lang-zh">VIII. 執行時程規劃</span><span class="lang-ko">VIII. 실행 일정 계획</span></h2>
+                <div class="card">
+                    <div class="relative border-l-2 border-accent pl-8 py-4">
+                        <div class="timeline-item mb-8">
+                            <h4 class="font-bold text-lg text-accent-dark font-serif"><span class="lang-zh">階段一：企劃準備與提交 (即日起 - 9/1)</span><span class="lang-ko">1단계: 기획 준비 및 제출 (현재 ~ 9/1)</span></h4>
+                            <p class="text-sm text-gray-500"><span class="lang-zh">申請截止前</span><span class="lang-ko">신청 마감 전</span></p>
+                            <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                                <li><strong class="text-accent-dark"><span class="lang-zh">(設計組、總召、翻譯組)</span><span class="lang-ko">(디자인팀, 총괄, 번역팀)</span></strong> <span class="lang-zh">~8/31: 完成應援物設計示意圖，並根據最終規劃完成中韓雙語企劃書。</span><span class="lang-ko">~8/31: 서포트 물품 시안 디자인 완료 및 최종 계획에 따라 중문/한글 기획서 완성.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">(總召)</span><span class="lang-ko">(총괄)</span></strong> <span class="lang-zh">9/1: 於截止時間前，將最終企劃書寄至主辦方指定信箱。</span><span class="lang-ko">9/1: 마감 시간 전, 최종 기획서를 주최 측 지정 이메일로 발송.</span></li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item mb-8">
+                            <h4 class="font-bold text-lg text-accent-dark font-serif"><span class="lang-zh">階段二：公告、募資與素材準備 (入選後第 1 週)</span><span class="lang-ko">2단계: 공지, 펀딩 및 물품 준비 (선정 후 1주차)</span></h4>
+                             <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                                <li><strong class="text-accent-dark"><span class="lang-zh">(公關/宣傳、財務、翻譯組)</span><span class="lang-ko">(홍보/마케팅, 재무, 번역팀)</span></strong> <span class="lang-zh">入選通知日: 正式發布入選公告，同步啟動第一階段募資。</span><span class="lang-ko">선정 통보일: 선정 공지 정식 발표 및 1단계 펀딩 동시 시작.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">(公關/宣傳、影片組、翻譯組)</span><span class="lang-ko">(홍보/마케팅, 영상팀, 번역팀)</span></strong> <span class="lang-zh">入選後第 2 天: 公布影片素材的募集辦法與規格。</span><span class="lang-ko">선정 후 2일차: 영상 소스 모집 방법 및 규격 공지.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">(財務、總召)</span><span class="lang-ko">(재무, 총괄)</span></strong> <span class="lang-zh">入選後第 7 天內: 根據募資進度，確認手幅與玻璃紙廠商，正式下單製作。</span><span class="lang-ko">선정 후 7일 내: 펀딩 진행 상황에 따라 슬로건 및 셀로판지 업체에 정식 주문.</span></li>
+                            </ul>
+                        </div>
+                        <div class="timeline-item">
+                            <h4 class="font-bold text-lg text-accent-dark font-serif"><span class="lang-zh">後續階段 (入選後第 2 週起)</span><span class="lang-ko">이후 단계 (선정 후 2주차부터)</span></h4>
+                             <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
+                                <li><strong class="text-accent-dark"><span class="lang-zh">第 14 天:</span><span class="lang-ko">14일차:</span></strong> <span class="lang-zh">影片素材募集截止。</span><span class="lang-ko">영상 소스 모집 마감.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">第 17 天:</span><span class="lang-ko">17일차:</span></strong> <span class="lang-zh">若一階募資達標，啟動二階募資並接洽後台應援。</span><span class="lang-ko">1단계 펀딩 목표 달성 시, 2단계 펀딩 시작 및 백스테이지 서포트 협의.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">第 24 天:</span><span class="lang-ko">24일차:</span></strong> <span class="lang-zh">影片初剪提交主辦方審核。</span><span class="lang-ko">영상 1차 편집본 주최 측에 검토 요청.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">活動前 5 天:</span><span class="lang-ko">공연 5일 전:</span></strong> <span class="lang-zh">招募現場小幫手、發布最終提醒。</span><span class="lang-ko">현장 스태프 모집 및 최종 안내 공지.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">活動後 3 天:</span><span class="lang-ko">공연 3일 후:</span></strong> <span class="lang-zh">發布後記感謝文。</span><span class="lang-ko">서포트 후기 및 감사 인사 공지.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">活動後 9 天:</span><span class="lang-ko">공연 9일 후:</span></strong> <span class="lang-zh">公布財務明細。</span><span class="lang-ko">재무 상세 내역 공지.</span></li>
+                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
     </main>
 
     <footer class="bg-accent-light mt-20 sm:mt-24 py-12">
@@ -381,12 +550,61 @@
         document.addEventListener('DOMContentLoaded', function () {
             const translations = {
                 zh: {
-                    title: '2025 RESCENE 1st FAN-CON in TAIPEI [RE:MIND] 應援企劃書'
+                    title: '2025 RESCENE 1st FAN-CON in TAIPEI [RE:MIND] 應援企劃書',
+                    chartLabels: ['後台支援', '現場應援物', '募資回饋品', '行政雜支']
                 },
                 ko: {
-                    title: '2025 RESCENE 1st FAN-CON in TAIPEI [RE:MIND] 서포트 기획서'
+                    title: '2025 RESCENE 1st FAN-CON in TAIPEI [RE:MIND] 서포트 기획서',
+                    chartLabels: ['백스테이지 서포트', '현장 서포트 물품', '펀딩 리워드', '행정 및 기타 비용']
                 }
             };
+            
+            const chartCtx = document.getElementById('budgetChart').getContext('2d');
+            const budgetChart = new Chart(chartCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: translations.zh.chartLabels,
+                    datasets: [{
+                        label: '預算分配',
+                        data: [41.7, 22.5, 25, 10.8],
+                        backgroundColor: ['#A08FB0', '#B8A9C9', '#D9D1E0', '#E9E3ED'],
+                        borderColor: '#F5F3F7',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                color: '#4A4A4A',
+                                font: {
+                                    family: "'Noto Sans TC', 'Noto Sans KR', sans-serif",
+                                    size: 14
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) { label += ': '; }
+                                    if (context.parsed !== null) { 
+                                        let total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                        let percentage = (context.parsed / total * 100).toFixed(1);
+                                        label += percentage + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    cutout: '60%'
+                }
+            });
             
             const langButtons = document.querySelectorAll('.lang-btn');
             const htmlEl = document.documentElement;
@@ -394,6 +612,8 @@
             function switchLanguage(lang) {
                 htmlEl.lang = lang === 'zh' ? 'zh-Hant' : 'ko';
                 document.title = translations[lang].title;
+                budgetChart.data.labels = translations[lang].chartLabels;
+                budgetChart.update();
                 langButtons.forEach(btn => {
                     btn.classList.toggle('active', btn.dataset.lang === lang);
                 });
