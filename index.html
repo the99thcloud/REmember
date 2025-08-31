@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 RESCENE 1st FAN-CON in TAIPEI [RE:MIND] 應援企劃書</title>
+    <link rel="icon" type="image/png" href="https://i0.wp.com/kpopforallofficial.com/wp-content/uploads/2024/05/logo-rescene.png?fit=600%2C600&ssl=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #F5F3F7; /* Light Lavender White */
+            color: #4A4A4A;
+            background-image: radial-gradient(circle at top left, rgba(233, 227, 237, 0.8) 0%, transparent 40%), radial-gradient(circle at bottom right, rgba(217, 209, 224, 0.7) 0%, transparent 50%);
+            background-attachment: fixed;
+            padding-top: 4rem; /* Added padding for fixed navbar */
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .text-accent-dark { color: #6F5F80; }
+        .text-accent { color: #A08FB0; }
+        .bg-accent-light { background-color: #E9E3ED; }
+        .bg-accent { background-color: #A08FB0; }
+        .border-accent { border-color: #A08FB0; }
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .nav-link.active, .nav-link:hover {
+            background-color: #A08FB0;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(160, 143, 176, 0.3);
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6F5F80;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(160, 143, 176, 0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(160, 143, 176, 0.2);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #A08FB0;
+            border: 4px solid #F5F3F7;
+        }
+
+        .lang-btn {
+            padding: 6px 14px;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+            font-size: 13px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .lang-btn.active {
+            background-color: #6F5F80;
+            color: white;
+        }
+
+        /* Language visibility logic */
+        .lang-zh, .lang-ko { display: none; }
+        html[lang="zh-Hant"] .lang-zh { display: revert; }
+        html[lang="ko"] .lang-ko { display: revert; }
+        html[lang="ko"] body { font-family: 'Noto Sans KR', sans-serif; }
+        html[lang="zh-Hant"] body { font-family: 'Noto Sans TC', sans-serif; }
+
+
+        /* --- HIDE PRINT-ONLY ELEMENTS ON SCREEN --- */
+        .print-only {
+            display: none;
+        }
+        
+        /* --- PRINT STYLES --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            
+            html, body {
+                padding-top: 0 !important;
+                background-color: #F5F3F7 !important;
+                background-image: radial-gradient(circle at top left, rgba(233, 227, 237, 0.8) 0%, transparent 40%), radial-gradient(circle at bottom right, rgba(217, 209, 224, 0.7) 0%, transparent 50%) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                width: 100%;
+                height: auto;
+            }
+
+            nav, footer, .print-button, #mobile-menu-button, #mobile-menu, #hero, #lang-switcher, #lang-switcher-mobile {
+                display: none !important;
+            }
+
+            main {
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+                space-y: 0 !important;
+            }
+            
+            .card {
+                box-shadow: 0 8px 32px 0 rgba(160, 143, 176, 0.15) !important;
+                border: 1px solid rgba(255, 255, 255, 0.2) !important;
+                background-color: rgba(255, 255, 255, 0.8) !important;
+                backdrop-filter: blur(12px) !important;
+                -webkit-backdrop-filter: blur(12px) !important;
+                margin-bottom: 0;
+            }
+            
+            .section-title, h1, h2, h3, h4, p, li, span, strong, .text-accent-dark, .text-gray-700, .text-gray-600, .text-gray-800, .text-gray-500, .text-accent {
+                color: #4A4A4A !important;
+            }
+            
+            .timeline-item::before {
+                background-color: #A08FB0 !important;
+                border-color: #F5F3F7 !important;
+            }
+            
+            .print-only {
+                display: block !important;
+            }
+
+            .print-page {
+                padding: 0.75in !important;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            #cover-page.print-page {
+                display: flex !important;
+                flex-direction: column !important;
+                justify-content: center !important;
+                align-items: center !important;
+                height: 100vh;
+            }
+            #cover-page .card {
+                min-height: 0 !important;
+                width: 100%;
+            }
+
+            .print-page:not(#cover-page) {
+                page-break-before: always;
+            }
+            
+            .timeline-item {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="navbar" class="bg-white/70 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm h-16">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="#hero" class="block">
+                    <img src="https://image.static.bstage.in/cdn-cgi/image/metadata=none,dpr=2,width=150/rescene-official/e8f55769-35f4-4135-b326-99d3fdc2c0c4/ec5b4ff4-4b44-4579-9f5d-fd51807768a6/ori.png" alt="RESCENE Logo" class="h-8">
+                </a>
+                <div class="hidden md:flex items-center space-x-2">
+                    <a data-target="cover-page" class="nav-link active"><span class="lang-zh">封面</span><span class="lang-ko">커버</span></a>
+                    <a data-target="overview" class="nav-link"><span class="lang-zh">企劃總覽</span><span class="lang-ko">기획 개요</span></a>
+                    <a data-target="on-site" class="nav-link"><span class="lang-zh">現場應援</span><span class="lang-ko">현장 서포트</span></a>
+                    <a data-target="backstage" class="nav-link"><span class="lang-zh">後台應援</span><span class="lang-ko">백스테이지</span></a>
+                    <a data-target="team-info" class="nav-link"><span class="lang-zh">團隊資訊</span><span class="lang-ko">팀 정보</span></a>
+                    <a onclick="window.print()" class="nav-link print-button flex items-center space-x-2 bg-accent-light text-accent-dark hover:bg-accent hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+                        <span><span class="lang-zh">列印</span><span class="lang-ko">인쇄</span></span>
+                    </a>
+                    <div id="lang-switcher" class="flex items-center border border-gray-200 rounded-full ml-2 p-0.5">
+                        <button data-lang="zh" class="lang-btn active">繁中</button>
+                        <button data-lang="ko" class="lang-btn">한국어</button>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-accent-dark focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 pb-4">
+            <a data-target="cover-page" class="block py-2 px-4 text-sm nav-link active text-center"><span class="lang-zh">封面</span><span class="lang-ko">커버</span></a>
+            <a data-target="overview" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">企劃總覽</span><span class="lang-ko">기획 개요</span></a>
+            <a data-target="on-site" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">現場應援</span><span class="lang-ko">현장 서포트</span></a>
+            <a data-target="backstage" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">後台應援</span><span class="lang-ko">백스테이지</span></a>
+            <a data-target="team-info" class="block py-2 px-4 text-sm nav-link text-center"><span class="lang-zh">團隊資訊</span><span class="lang-ko">팀 정보</span></a>
+            <a onclick="window.print()" class="block py-2 px-4 text-sm nav-link print-button text-center"><span class="lang-zh">列印/存成PDF</span><span class="lang-ko">인쇄/PDF 저장</span></a>
+            <div id="lang-switcher-mobile" class="flex justify-center items-center border border-gray-200 rounded-full mt-2 mx-auto w-fit p-0.5">
+                <button data-lang="zh" class="lang-btn active">繁中</button>
+                <button data-lang="ko" class="lang-btn">한국어</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="h-screen flex flex-col justify-end items-center bg-cover bg-center -mt-16 pb-20" style="background-image: url('https://image.static.bstage.in/cdn-cgi/image/metadata=none,dpr=1,f=auto,width=1360/rescene-official/df14c459-2b0f-4531-b3a8-e7bfb2ddd32a/0e4b281f-3bcc-4e70-83fd-6a61266dc367/ori.jpg');">
+        <div class="text-center p-8 rounded-lg bg-black/20 backdrop-blur-sm w-full max-w-md md:max-w-2xl mx-4 sm:mx-0">
+             <img src="https://image.static.bstage.in/cdn-cgi/image/metadata=none,dpr=2,width=150/rescene-official/e8f55769-35f4-4135-b326-99d3fdc2c0c4/ec5b4ff4-4b44-4579-9f5d-fd51807768a6/ori.png" alt="RESCENE Logo" class="h-12 mx-auto mb-4" style="filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));">
+            <p class="text-lg md:text-xl lg:text-2xl mt-4 text-white font-semibold" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);">1st FAN-CON in TAIPEI [RE:MIND]</p>
+            <p class="mt-2 text-white/90" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.5);"><span class="lang-zh">聯合應援企劃書</span><span class="lang-ko">연합 서포트 기획서</span></p>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 space-y-16 sm:space-y-20">
+        
+        <div class="print-page" id="cover-page">
+            <section class="scroll-mt-20 p-0">
+                 <div class="card min-h-[80vh] flex flex-col justify-center items-center text-center">
+                    <div class="py-8">
+                        <img src="https://image.static.bstage.in/cdn-cgi/image/metadata=none,dpr=2,width=150/rescene-official/e8f55769-35f4-4135-b326-99d3fdc2c0c4/ec5b4ff4-4b44-4579-9f5d-fd51807768a6/ori.png" alt="RESCENE Logo" class="h-16 mx-auto">
+                        <h1 class="text-4xl md:text-5xl font-bold font-serif text-accent-dark mt-8">1st FAN-CON in TAIPEI</h1>
+                        <h2 class="text-3xl md:text-4xl font-bold font-serif text-accent-dark mt-2">[RE:MIND]</h2>
+                        <div class="my-12 border-t-2 border-accent w-1/4 mx-auto"></div>
+                        <p class="text-3xl md:text-4xl font-serif text-gray-700"><span class="lang-zh">聯合應援企劃書</span><span class="lang-ko">연합 서포트 기획서</span></p>
+                        <p class="mt-8 text-lg text-gray-600"><span class="lang-zh">提案單位：REmember</span><span class="lang-ko">제안: REmember</span></p>
+                        <p class="mt-2 text-lg text-gray-600"><span class="lang-zh">提案日期：2025年9月1日</span><span class="lang-ko">제안일: 2025년 9월 1일</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="print-page">
+            <section id="overview" class="scroll-mt-20 p-0">
+                <h2 class="section-title font-serif"><span class="lang-zh">I. 企劃總覽</span><span class="lang-ko">I. 기획 개요</span></h2>
+                <div class="card">
+                    <h3 class="text-2xl font-bold text-accent-dark mb-4 font-serif"><span class="lang-zh">核心概念：以香氣喚醒，以回憶連結</span><span class="lang-ko">핵심 컨셉: 향기로 깨우고, 추억으로 연결하다</span></h3>
+                    <p class="text-lg leading-relaxed text-gray-800">
+                        <span class="lang-zh">本次應援企劃的核心願景，不僅是為 RESCENE 首次台北 FAN-CON 提供支持，更是要將活動打造成一場深刻的、多感官的「普魯斯特效應」體驗。企劃將緊密圍繞 RESCENE 的核心概念——「香氣 (Scent)」與「場景 (Scene)」，並與 FAN-CON 主題「RE:MIND」及粉絲名「REMINE」進行深度連結。我們的目標是將粉絲的愛與支持，轉化為一種獨特、溫暖、專屬於台北的「香氣」，讓 RESCENE 在踏上舞台的每一刻，都能聞到、看到、感受到這份深刻的連結，共同創造一個在未來能不斷被「RE:MIND」的完美場景。</span>
+                        <span class="lang-ko">이번 서포트 기획의 핵심 비전은 RESCENE의 첫 타이베이 팬콘을 지원하는 것뿐만 아니라, 행사를 깊이 있고 다감각적인 '프루스트 효과' 체험으로 만드는 것입니다. 기획은 RESCENE의 핵심 컨셉인 '향기(Scent)'와 '장면(Scene)'을 중심으로, 팬콘 주제인 'RE:MIND' 및 팬덤명 'REMINE'과 깊이 연결됩니다. 저희의 목표는 팬들의 사랑과 지지를 독특하고 따뜻하며 타이베이만의 '향기'로 전환하여, RESCENE이 무대에 오르는 모든 순간에 이 깊은 연결을 맡고, 보고, 느끼며, 미래에 계속해서 'RE:MIND'될 수 있는 완벽한 장면을 함께 만드는 것입니다.</span>
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <div class="print-page">
+            <section id="on-site" class="scroll-mt-20 p-0">
+                <h2 class="section-title font-serif"><span class="lang-zh">II. 現場應援企劃</span><span class="lang-ko">II. 현장 서포트 기획</span></h2>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">傳遞我們的話語：單一款全場手幅</span><span class="lang-ko">우리의 메시지 전달: 단일 디자인 전체 슬로건</span></h3>
+                    <p class="mb-4 text-gray-700"><span class="lang-zh">為集中資源並確保訊息傳遞的統一性，本次規劃製作一款設計精美、訊息深刻的主手幅於全場發放。</span><span class="lang-ko">자원을 집중하고 메시지 전달의 통일성을 확보하기 위해, 이번에는 아름답게 디자인되고 깊은 메시지를 담은 메인 슬로건을 제작하여 전체 관객에게 배부할 계획입니다.</span></p>
+                    <ul class="space-y-4 list-disc list-inside text-gray-700">
+                        <li><strong><span class="lang-zh">正面文案:</span><span class="lang-ko">앞면 문구:</span></strong> <span class="font-semibold text-gray-800">이 순간의 향기, 대만이 주는 기억</span><br><span class="text-sm text-gray-500"><span class="lang-zh">(翻譯: 此刻的香氣，是台灣獻上的記憶)</span><span class="lang-ko">(번역: 이 순간의 향기는, 대만이 선사하는 기억)</span></span></li>
+                        <li class="space-y-2">
+                            <strong><span class="lang-zh">背面文案:</span><span class="lang-ko">뒷면 문구:</span></strong> 
+                            <p class="text-sm"><strong class="font-semibold text-gray-800">繁中:</strong> 應援影片播放結束後，請舉起寫有韓文的正面。安可時，請與我們一同清唱 "LOVE ATTACK" 副歌一次，接著齊喊「安可！」<br><span class="italic text-accent-dark">【空耳】Like me, like me, 阿啾努力補新 / 那勒 森給媽西 波呦啾 / 喊蹦抖 扁囊 這 哦噗搜抖 米記耶 / 香喔囉 噢 撒咧桑嗯 木抖呂</span></p>
+                            <p class="text-sm"><strong class="font-semibold text-gray-800">한글:</strong> 응원 영상이 끝난 후, 앞면(한국어)을 들어주세요. 앵콜 시에는 'LOVE ATTACK' 후렴구를 한 번 함께 불러주신 후, 다 같이 "앵콜!"을 외쳐주세요. (아래 로마자 가사 표기)</p>
+                            <p class="text-sm"><strong class="font-semibold text-gray-800">日本語:</strong> 応援映像が終わったら、表面（韓国語）を上げてください。アンコールでは「LOVE ATTACK」のサビを一緒に一度歌ってから「アンコール！」と叫んでください。</p>
+                            <p class="text-sm"><strong class="font-semibold text-gray-800">English:</strong> After the fan video, please raise the front (Korean side). For the encore, please sing the chorus of "LOVE ATTACK" with us once, then shout "Encore!".</p>
+                        </li>
+                        <li><strong><span class="lang-zh">預計設計風格:</span><span class="lang-ko">예상 디자인 스타일:</span></strong> <span class="lang-zh">以「綻放的花」或「香水瓶」為視覺元素，採用柔和色系。</span><span class="lang-ko">'피어나는 꽃' 또는 '향수병'을 시각적 요소로 사용하여 부드러운 색감으로 디자인할 예정입니다.</span></li>
+                        <li><strong><span class="lang-zh">預計材質規格:</span><span class="lang-ko">예상 재질 및 규격:</span></strong> <span class="lang-zh">採用霧面不反光相紙，尺寸估計約 45cm x 15cm，避免舞台燈光反射。</span><span class="lang-ko">무대 조명 반사를 피하기 위해 무광 비반사 포토용지를 사용하며, 크기는 약 45cm x 15cm로 예상됩니다.</span></li>
+                        <li><strong><span class="lang-zh">規劃使用時機:</span><span class="lang-ko">사용 시점:</span></strong> <span class="font-semibold text-gray-800"><span class="lang-zh">應援影片播放結束後</span><span class="lang-ko">응원 영상 종료 후</span></span> <span class="lang-zh">(及 Talking、大合照環節)</span><span class="lang-ko">(및 토크, 단체 사진 촬영 시간)</span></li>
+                        <li>
+                            <strong><span class="lang-zh">示意圖:</span><span class="lang-ko">시안:</span></strong>
+                            <div class="mt-2 p-4 border border-dashed border-accent rounded-lg bg-accent-light/30 h-24 flex items-center justify-center">
+                                <p class="text-gray-500"><span class="lang-zh">(示意圖將於定稿後提供)</span><span class="lang-ko">(시안은 최종 확정 후 제공됩니다)</span></p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="print-page">
+            <section class="p-0">
+                <h2 class="section-title font-serif print-only"><span class="lang-zh">II. 現場應援企劃</span><span class="lang-ko">II. 현장 서포트 기획</span></h2>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">回憶的香頌：歌曲 "Mood" 綠色光海</span><span class="lang-ko">추억의 샹송: "Mood" 초록 불빛 바다</span></h3>
+                    <p class="mb-4 text-gray-700"><span class="lang-zh">為確保所有粉絲都能輕鬆參與並專注於表演，規劃採用經典且效果卓越的玻璃紙燈海應援。綠色呼應專輯 “Dearest“ 中的自然元素，創造一片清新夢幻的氛圍。</span><span class="lang-ko">모든 팬들이 쉽게 참여하고 공연에 집중할 수 있도록, 클래식하면서도 효과가 뛰어난 셀로판지 라이트 오션 서포트를 기획합니다. 초록색은 앨범 "Dearest"의 자연적 요소를 반영하여, 신선하고 몽환적인 분위기를 연출합니다.</span></p>
+                    <ol class="space-y-3 list-decimal list-inside text-gray-700">
+                        <li><strong><span class="lang-zh">事前準備:</span><span class="lang-ko">사전 준비:</span></strong> <span class="lang-zh">預計入場時，向每位粉絲發放一張綠色玻璃紙。</span><span class="lang-ko">입장 시 모든 팬에게 초록색 셀로판지를 한 장씩 배부할 예정입니다.</span></li>
+                        <li><strong><span class="lang-zh">觸發時機:</span><span class="lang-ko">실행 시점:</span></strong> <span class="lang-zh">規劃於演唱會後半段，當唱到 "Mood" 時，全場粉絲</span><span class="lang-ko">콘서트 후반부, 'Mood' 곡 진행 시 모든 팬들이</span> <span class="font-semibold text-gray-800"><span class="lang-zh">統一關閉手燈</span><span class="lang-ko">응원봉을 일제히 끕니다</span></span>。</li>
+                        <li><strong><span class="lang-zh">點亮回憶:</span><span class="lang-ko">추억 밝히기:</span></strong> <span class="lang-zh">關閉手燈同時，開啟手機手電筒，並將綠色玻璃紙覆蓋在鏡頭上，共同創造一片靜謐的「螢光森林」。</span><span class="lang-ko">응원봉을 끈 동시에 휴대폰 손전등을 켜고, 렌즈 위에 초록색 셀로판지를 덮어 고요한 '형광 숲'을 함께 만듭니다.</span></li>
+                        <li><strong><span class="lang-zh">優點:</span><span class="lang-ko">장점:</span></strong> <span class="lang-zh">操作最為簡單，視覺效果集中壯觀，粉絲無需分心操作手機，能完全沉浸在音樂與氛圍中。</span><span class="lang-ko">조작이 가장 간단하고 시각적 효과가 집중되어 장관을 이루며, 팬들이 휴대폰 조작에 신경 쓰지 않고 음악과 분위기에 완전히 몰입할 수 있습니다.</span></li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+        <div class="print-page">
+            <section class="p-0">
+                <h2 class="section-title font-serif print-only"><span class="lang-zh">II. 現場應援企劃</span><span class="lang-ko">II. 현장 서포트 기획</span></h2>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">呼喚我們的香氣：特別安可應援</span><span class="lang-ko">우리의 향기를 부르다: 특별 앵콜 서포트</span></h3>
+                    <p class="mb-4 text-gray-700"><span class="lang-zh">為創造更具意義的安可環節，規劃由全場共同清唱 RESCENE 的熱門歌曲 "LOVE ATTACK" 的副歌一次，接著齊聲呼喊安可。</span><span class="lang-ko">더욱 의미 있는 앵콜을 만들기 위해, RESCENE의 인기곡 "LOVE ATTACK"의 후렴구를 다 함께 한 번 떼창한 후, 함께 앵콜을 외치는 것을 기획합니다.</span></p>
+                    <p class="text-gray-700"><strong><span class="lang-zh">理由:</span><span class="lang-ko">이유:</span></strong> <span class="lang-zh">"LOVE ATTACK" 充滿活力與記憶點，副歌旋律朗朗上口，適合全場大合唱，能將活動氣氛推向最高潮，以最熱情的方式呼喚她們重返舞台。</span><span class="lang-ko">"LOVE ATTACK"은 활기차고 기억에 남는 포인트가 많으며, 후렴구 멜로디가 따라 부르기 쉬워 떼창에 적합합니다. 이를 통해 현장 분위기를 최고조로 끌어올리고, 가장 열정적인 방식으로 그녀들을 다시 무대로 불러낼 수 있습니다.</span></p>
+                </div>
+            </section>
+        </div>
+        <div class="print-page">
+            <section class="p-0">
+                <h2 class="section-title font-serif print-only"><span class="lang-zh">II. 現場應援企劃</span><span class="lang-ko">II. 현장 서포트 기획</span></h2>
+                <div class="card">
+                    <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">影片應援：REMINE 的心意膠卷</span><span class="lang-ko">영상 서포트: REMINE의 마음을 담은 필름</span></h3>
+                    <p class="mb-4 text-gray-700"><span class="lang-zh">為向 RESCENE 傳達台灣 REMINE 的心意，我們希望能製作一支應援影片於場內播放。經過討論，最終定案內容如下：</span><span class="lang-ko">RESCENE에게 대만 REMINE의 마음을 전하기 위해, 공연장에서 상영할 서포트 영상을 제작하고자 합니다. 논의를 거쳐 최종 결정된 내용은 다음과 같습니다:</span></p>
+                    <div class="p-4 border-l-4 border-accent bg-accent-light/50 rounded-r-lg">
+                        <h4 class="font-bold text-accent-dark"><span class="lang-zh">最終方案：台灣風景寫真 x 感性告白</span><span class="lang-ko">최종 방안: 대만 풍경 사진 x 감성 고백</span></h4>
+                        <p class="mt-1 text-gray-700"><span class="lang-zh">本方案將結合視覺與聽覺，傳達最深刻的情感。我們將募集兩種類型的素材：<br>1. <strong>照片：</strong>募集粉絲帶著 RESCENE 小卡、拍立得或手燈，與台灣的特色建築或美麗風景的合照。<br>2. <strong>音檔：</strong>募集粉絲錄製 3-5 秒想對 RESCENE 說的告白或感謝。 <br>最終影片會將粉絲拍攝的台灣風景照片，搭配粉絲的真情告白錄音，並穿插官方影像，製作成一支富含台灣特色與 REMINE 心意的感性影片。</span><span class="lang-ko">본 방안은 시각과 청각을 결합하여 가장 깊은 감동을 전달하고자 합니다. 두 가지 유형의 자료를 모집할 예정입니다:<br>1. <strong>사진:</strong> 팬들이 RESCENE 포토카드, 폴라로이드 또는 응원봉을 들고 대만의 특색 있는 건축물이나 아름다운 풍경과 함께 찍은 사진.<br>2. <strong>음성 파일:</strong> 팬들이 RESCENE에게 하고 싶은 3-5초 분량의 고백 또는 감사 메시지를 녹음한 파일.<br>최종 영상은 팬들이 촬영한 대만 풍경 사진과 팬들의 진심이 담긴 고백 음성을 결합하고, 공식 영상을 믹스하여 대만의 특색과 REMINE의 마음이 가득 담긴 감성적인 영상으로 제작될 것입니다.</span></p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="print-page">
+            <section id="backstage" class="scroll-mt-20 p-0">
+                <h2 class="section-title font-serif"><span class="lang-zh">III. 後台應援</span><span class="lang-ko">III. 백스테이지 서포트</span></h2>
+                <div class="card">
+                     <h3 class="text-2xl font-bold text-accent-dark mb-4 font-serif text-center"><span class="lang-zh">預計方案</span><span class="lang-ko">예상 방안</span></h3>
+                     <p class="text-gray-700"><span class="lang-zh">為向藝人與團隊表達最誠摯的歡迎與感謝，我們預計規劃餐飲及特色獻禮的後台應援。所有項目的具體內容與執行細節，將在募資成功後，與主辦單位及經紀方進行密切溝通，並依其需求與規定進行最終確認與調整，確保應援活動能以最貼心、最完善的方式呈現。</span><span class="lang-ko">아티스트와 스태프에게 진심 어린 환영과 감사를 표하기 위해, 케이터링 및 특별 선물로 구성된 백스테이지 서포트를 기획하고 있습니다. 모든 항목의 구체적인 내용과 실행 세부 사항은 펀딩 성공 후, 주최 측 및 소속사와 긴밀히 소통하여 그들의 요구와 규정에 따라 최종 확인 및 조정을 거칠 예정입니다. 이를 통해 서포트가 가장 세심하고 완벽한 방식으로 전달될 수 있도록 하겠습니다.</span></p>
+                </div>
+            </section>
+        </div>
+
+        <div class="print-page">
+            <section id="team-info" class="scroll-mt-20 p-0">
+                <h2 class="section-title font-serif"><span class="lang-zh">IV. 團隊資訊</span><span class="lang-ko">IV. 팀 정보</span></h2>
+                <div class="card">
+                    <ul class="space-y-4 text-gray-800">
+                        <li class="flex flex-col sm:flex-row">
+                            <strong class="w-full sm:w-1/4 mb-1 sm:mb-0"><span class="lang-zh">應援團隊名稱</span><span class="lang-ko">서포트 팀명</span>:</strong>
+                            <span><span class="lang-zh">REmember - RESCENE [REMIND] 台灣場應援團隊</span><span class="lang-ko">REmember - RESCENE [REMIND] 대만 서포트 팀</span></span>
+                        </li>
+                        <li class="flex flex-col sm:flex-row">
+                            <strong class="w-full sm:w-1/4 mb-1 sm:mb-0"><span class="lang-zh">主要窗口聯繫</span><span class="lang-ko">주요 담당자 연락처</span>:</strong>
+                            <span><span class="lang-zh">莫莫 (LINE ID: panchengen1001)</span><span class="lang-ko">모모 (LINE ID: panchengen1001)</span></span>
+                        </li>
+                        <li class="flex flex-col sm:flex-row">
+                            <strong class="w-full sm:w-1/4 mb-1 sm:mb-0"><span class="lang-zh">應援粉絲團連結</span><span class="lang-ko">팬 페이지 링크</span>:</strong>
+                            <span class="flex flex-col">
+                                <span>Instagram: <a href="https://www.instagram.com/rescene_twunion" target="_blank" class="text-accent hover:underline">rescene_twunion</a></span>
+                            </span>
+                        </li>
+                        <li class="flex flex-col sm:flex-row">
+                            <strong class="w-full sm:w-1/4 mb-1 sm:mb-0"><span class="lang-zh">未成年成員說明</span><span class="lang-ko">미성년자 팀원 안내</span>:</strong>
+                            <span><span class="lang-zh">本團隊確認所有參與現場執行工作之成員皆已成年。若有未成年成員參與線上工作（如設計、影片剪輯），其工作內容不涉及線下活動與財務管理，且我們已徵得其法定代理人之書面同意，同意書將與本企劃書一併提交。</span><span class="lang-ko">본 팀의 모든 현장 실행 업무 참여자는 성인임을 확인합니다. 미성년자 팀원이 온라인 작업(예: 디자인, 영상 편집)에 참여할 경우, 해당 업무는 오프라인 활동 및 재무 관리와 관련이 없으며, 법정대리인의 서면 동의를 받았으며, 동의서는 본 기획서와 함께 제출될 것입니다.</span></span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-accent-light mt-20 sm:mt-24 py-12">
+        <div class="max-w-6xl mx-auto text-center text-accent-dark">
+            <p class="font-bold font-serif text-xl"><span class="lang-zh">讓這一刻，成為永恆的香氣</span><span class="lang-ko">이 순간이, 영원한 향기가 되기를</span></p>
+            <p class="text-sm mt-4 opacity-70">© 2025 REmember. All Rights Reserved.</p>
+            <p class="text-xs mt-6 opacity-60 max-w-3xl mx-auto px-4"><span class="lang-zh">本企劃書內容（包含所有文字、設計與財務規劃）屬內部機密文件，僅供合作單位審閱評估。未經本單位書面許可，嚴禁以任何形式複製、轉載、引用或對外洩露。</span><span class="lang-ko">본 기획서의 내용(모든 텍스트, 디자인, 재무 계획 포함)은 내부 기밀 문서이며, 협력사의 검토 및 평가 목적으로만 제공됩니다. 본 연합의 서면 허가 없이는 어떠한 형태로든 복제, 전재, 인용 또는 외부에 내용을 유출하는 것을 엄격히 금지합니다.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const translations = {
+                zh: {
+                    title: '2025 RESCENE 1st FAN-CON in TAIPEI [RE:MIND] 應援企劃書'
+                },
+                ko: {
+                    title: '2025 RESCENE 1st FAN-CON in TAIPEI [RE:MIND] 서포트 기획서'
+                }
+            };
+            
+            const langButtons = document.querySelectorAll('.lang-btn');
+            const htmlEl = document.documentElement;
+
+            function switchLanguage(lang) {
+                htmlEl.lang = lang === 'zh' ? 'zh-Hant' : 'ko';
+                document.title = translations[lang].title;
+                langButtons.forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === lang);
+                });
+            }
+
+            langButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    switchLanguage(btn.dataset.lang);
+                });
+            });
+
+            switchLanguage('zh');
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navbar = document.getElementById('navbar');
+            const navHeight = navbar.offsetHeight;
+
+            function setActiveLink() {
+                let current = '';
+                const mainSections = document.querySelectorAll('.print-page > section[id]');
+                mainSections.forEach(section => {
+                    const sectionTop = section.closest('.print-page').offsetTop;
+                    if (window.pageYOffset >= sectionTop - navHeight - 50) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-target') && document.getElementById(link.getAttribute('data-target'))) {
+                         if (link.getAttribute('data-target') === current) {
+                            link.classList.add('active');
+                        }
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                if (link.getAttribute('data-target')) {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = link.getAttribute('data-target');
+                        const targetSection = document.getElementById(targetId);
+                        const targetElement = targetSection ? targetSection.closest('.print-page') : null;
+                        
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - navHeight,
+                                behavior: 'smooth'
+                            });
+                        }
+
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+                    });
+                }
+            });
+
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink();
+        });
+    </script>
+</body>
+</html>
+
