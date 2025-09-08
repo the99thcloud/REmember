@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="https://i0.wp.com/kpopforallofficial.com/wp-content/uploads/2024/05/logo-rescene.png?fit=600%2C600&ssl=1">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
@@ -48,6 +49,7 @@
             text-align: center;
         }
         .card {
+            position: relative;
             background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
@@ -98,6 +100,28 @@
             color: white;
         }
 
+        .capture-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background-color: rgba(111, 95, 128, 0.1);
+            color: #6F5F80;
+            border-radius: 9999px;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            opacity: 0.5;
+            z-index: 10;
+        }
+        .card:hover .capture-btn {
+            opacity: 1;
+        }
+        .capture-btn:hover {
+            background-color: #A08FB0;
+            color: white;
+            transform: scale(1.1);
+        }
+
         /* Language visibility logic */
         .lang-zh, .lang-ko { display: none; }
         html[lang="zh-Hant"] .lang-zh { display: revert; }
@@ -139,7 +163,7 @@
                 print-color-adjust: exact !important;
             }
 
-            nav, footer, .print-button, #mobile-menu-button, #mobile-menu, #hero, #lang-switcher, #lang-switcher-mobile {
+            nav, footer, .print-button, #mobile-menu-button, #mobile-menu, #hero, #lang-switcher, #lang-switcher-mobile, .capture-btn {
                 display: none !important;
             }
 
@@ -256,6 +280,9 @@
         <div class="print-page" id="cover-page">
             <section class="scroll-mt-20 p-0">
                  <div class="card min-h-[80vh] flex flex-col justify-center items-center text-center">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <div class="py-8">
                         <img src="https://image.static.bstage.in/cdn-cgi/image/metadata=none,dpr=2,width=150/rescene-official/e8f55769-35f4-4135-b326-99d3fdc2c0c4/ec5b4ff4-4b44-4579-9f5d-fd51807768a6/ori.png" alt="RESCENE Logo" class="h-16 mx-auto">
                         <h1 class="text-4xl md:text-5xl font-bold font-serif text-accent-dark mt-8">1st FAN-CON in TAIPEI</h1>
@@ -273,6 +300,9 @@
             <section id="overview" class="scroll-mt-20 p-0">
                 <h2 class="section-title font-serif"><span class="lang-zh">I. 企劃總覽</span><span class="lang-ko">I. 기획 개요</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <h3 class="text-2xl font-bold text-accent-dark mb-4 font-serif"><span class="lang-zh">核心概念：以香氣喚醒，以回憶連結</span><span class="lang-ko">핵심 컨셉: 향기로 깨우고, 추억으로 연결하다</span></h3>
                     <p class="text-lg leading-relaxed text-gray-800">
                         <span class="lang-zh">本次應援企劃的核心願景，不僅是為 RESCENE 首次台北 FAN-CON 提供支持，更是要將活動打造成一場深刻的、多感官的「普魯斯特效應」體驗。企劃將緊密圍繞 RESCENE 的核心概念——「香氣 (Scent)」與「場景 (Scene)」，並與 FAN-CON 主題「RE:MIND」及粉絲名「REMINE」進行深度連結。我們的目標是將粉絲的愛與支持，轉化為一種獨特、溫暖、專屬於台北的「香氣」，讓 RESCENE 在踏上舞台的每一刻，都能聞到、看到、感受到這份深刻的連結，共同創造一個在未來能不斷被「RE:MIND」的完美場景。</span>
@@ -286,6 +316,9 @@
             <section id="on-site" class="scroll-mt-20 p-0">
                 <h2 class="section-title font-serif"><span class="lang-zh">II. 現場應援企劃</span><span class="lang-ko">II. 현장 서포트 기획</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">傳遞我們的話語：單一款全場手幅</span><span class="lang-ko">우리의 메시지 전달: 단일 디자인 전체 슬로건</span></h3>
                     <ul class="space-y-4 list-disc list-inside text-gray-700">
                         <li><strong><span class="lang-zh">正面文案:</span><span class="lang-ko">앞면 문구:</span></strong> <span class="font-semibold text-gray-800">REMINE과 함께하는 지금 이 순간의 향기</span><br><span class="text-sm text-gray-500"><span class="lang-zh">(翻譯: 與 REMINE 一同創造的此刻香氣)</span><span class="lang-ko">(번역: REMINE과 함께하는 지금 이 순간의 향기)</span></span></li>
@@ -307,6 +340,9 @@
             <section class="p-0">
                  <h2 class="section-title font-serif print-only"><span class="lang-zh">II. 現場應援企劃</span><span class="lang-ko">II. 현장 서포트 기획</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">手幅應援示意圖</span><span class="lang-ko">슬로건 시안</span></h3>
                      <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
@@ -325,14 +361,18 @@
             <section class="p-0">
                 <h2 class="section-title font-serif print-only"><span class="lang-zh">II. 現場應援企劃</span><span class="lang-ko">II. 현장 서포트 기획</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">回憶的香頌：歌曲「Mood」綠色光海</span><span class="lang-ko">추억의 샹송: "Mood" 초록 불빛 바다</span></h3>
                     <p class="mb-4 text-gray-700"><span class="lang-zh">為確保所有粉絲都能輕鬆參與並專注於表演，規劃採用經典且效果卓越的玻璃紙燈海應援。綠色呼應專輯 “Dearest“ 中的自然元素，創造一片清新夢幻的氛圍。</span><span class="lang-ko">모든 팬들이 쉽게 참여하고 공연에 집중할 수 있도록, 클래식하면서도 효과가 뛰어난 셀로판지 라이트 오션 서포트를 기획합니다. 초록색은 앨범 "Dearest"의 자연적 요소를 반영하여, 신선하고 몽환적인 분위기를 연출합니다.</span></p>
                     <ol class="space-y-3 list-decimal list-inside text-gray-700">
-                        <li><strong><span class="lang-zh">事前準備:</span><span class="lang-ko">사전 준비:</span></strong> <span class="lang-zh">預計入場時，向每位粉絲發放一張綠色玻璃紙。</span><span class="lang-ko">입장 시 모든 팬에게 초록색 셀로판지를 한 장씩 배부할 예정입니다.</span></li>
+                        <li><strong><span class="lang-zh">事前準備:</span><span class="lang-ko">사전 준비:</span></strong> <span class="lang-zh">為方便粉絲參與，綠色玻璃紙將會預先黏貼固定於手幅背面指定區域。</span><span class="lang-ko">팬들의 편의를 위해, 초록색 셀로판지는 슬로건 뒷면 지정된 위치에 미리 부착될 예정입니다.</span></li>
                         <li><strong><span class="lang-zh">觸發時機:</span><span class="lang-ko">실행 시점:</span></strong> <span class="lang-zh">規劃於演唱會後半段，當唱到「Mood」時，全場粉絲</span><span class="lang-ko">콘서트 후반부, 'Mood' 곡 진행 시 모든 팬들이</span> <span class="font-semibold text-gray-800"><span class="lang-zh">統一關閉手燈</span><span class="lang-ko">응원봉을 일제히 끕니다</span></span>。</li>
-                        <li><strong><span class="lang-zh">點亮回憶:</span><span class="lang-ko">추억 밝히기:</span></strong> <span class="lang-zh">關閉手燈同時，開啟手機手電筒，並將綠色玻璃紙蓋在手機手電筒上，共同創造一片靜謐的「螢光森林」。</span><span class="lang-ko">응원봉을 끈 동시에 휴대폰 손전등을 켜고, 손전등 위에 초록색 셀로판지를 덮어 고요한 '형광 숲'을 함께 만듭니다.</span></li>
+                        <li><strong><span class="lang-zh">點亮回憶:</span><span class="lang-ko">추억 밝히기:</span></strong> <span class="lang-zh">關閉手燈同時，開啟手機手電筒，並將手幅背面的綠色玻璃紙對準手機光源，共同創造一片靜謐的「螢光森林」。</span><span class="lang-ko">응원봉을 끈 동시에 휴대폰 손전등을 켜고, 슬로건 뒷면의 초록색 셀로판지를 휴대폰 광원에 맞추어 고요한 '형광 숲'을 함께 만듭니다.</span></li>
                         <li><strong><span class="lang-zh">優點:</span><span class="lang-ko">장점:</span></strong> <span class="lang-zh">操作最為簡單，視覺效果集中壯觀，粉絲無需分心操作手機，能完全沉浸在音樂與氛圍中。</span><span class="lang-ko">조작이 가장 간단하고 시각적 효과가 집중되어 장관을 이루며, 팬들이 휴대폰 조작에 신경 쓰지 않고 음악과 분위기에 완전히 몰입할 수 있습니다.</span></li>
                     </ol>
+                    <p class="mt-4 text-sm text-gray-500"><span class="lang-zh">* 溫馨提醒：此應援方式經測試不影響粉絲錄影，且透過玻璃紙的光線柔和，不會對成員眼睛造成負擔，敬請安心參與。</span><span class="lang-ko">* 안내: 본 서포트 방식은 테스트 결과 팬들의 영상 촬영에 영향을 주지 않으며, 셀로판지를 통과한 빛은 부드러워 멤버들의 눈에 부담을 주지 않으니 안심하고 참여해 주시기 바랍니다.</span></p>
                 </div>
             </section>
         </div>
@@ -340,6 +380,9 @@
             <section class="p-0">
                 <h2 class="section-title font-serif print-only"><span class="lang-zh">II. 現場應援企劃</span><span class="lang-ko">II. 현장 서포트 기획</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">呼喚我們的香氣：特別安可應援</span><span class="lang-ko">우리의 향기를 부르다: 특별 앵콜 서포트</span></h3>
                     <p class="mb-4 text-gray-700"><span class="lang-zh">為創造更具意義的安可環節，規劃由全場共同清唱 RESCENE 的熱門歌曲「LOVE ATTACK」的副歌一次，接著齊聲呼喊安可。</span><span class="lang-ko">더욱 의미 있는 앵콜을 만들기 위해, RESCENE의 인기곡 "LOVE ATTACK"의 후렴구를 다 함께 한 번 떼창한 후, 함께 앵콜을 외치는 것을 기획합니다.</span></p>
                     <p class="text-gray-700"><strong><span class="lang-zh">理由:</span><span class="lang-ko">이유:</span></strong> <span class="lang-zh">「LOVE ATTACK」充滿活力與記憶點，副歌旋律朗朗上口，適合全場大合唱，能將活動氣氛推向最高潮，以最熱情的方式呼喚她們重返舞台。</span><span class="lang-ko">"LOVE ATTACK"은 활기차고 기억에 남는 포인트가 많으며, 후렴구 멜로디가 따라 부르기 쉬워 떼창에 적합합니다. 이를 통해 현장 분위기를 최고조로 끌어올리고, 가장 열정적인 방식으로 그녀들을 다시 무대로 불러낼 수 있습니다.</span></p>
@@ -350,6 +393,9 @@
             <section class="p-0">
                 <h2 class="section-title font-serif print-only"><span class="lang-zh">II. 現場應援企劃</span><span class="lang-ko">II. 현장 서포트 기획</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">影片應援：REMINE 的心意膠卷</span><span class="lang-ko">영상 서포트: REMINE의 마음을 담은 필름</span></h3>
                     <p class="mb-4 text-gray-700"><span class="lang-zh">為向 RESCENE 傳達台灣 REMINE 的心意，我們希望能製作一支應援影片於場內播放。經過討論，最終定案內容如下：</span><span class="lang-ko">RESCENE에게 대만 REMINE의 마음을 전하기 위해, 공연장에서 상영할 서포트 영상을 제작하고자 합니다. 논의를 거쳐 최종 결정된 내용은 다음과 같습니다:</span></p>
                     <div class="p-4 border-l-4 border-accent bg-accent-light/50 rounded-r-lg">
@@ -364,6 +410,9 @@
             <section id="backstage" class="scroll-mt-20 p-0">
                 <h2 class="section-title font-serif"><span class="lang-zh">III. 後台應援</span><span class="lang-ko">III. 백스테이지 서포트</span></h2>
                 <div class="card space-y-6">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <div>
                         <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">規劃方向</span><span class="lang-ko">기획 방향</span></h3>
                         <p class="text-gray-700"><span class="lang-zh">為向藝人與團隊表達最誠摯的歡迎與感謝，我們希望能準備能代表台灣特色的餐點、零食與伴手禮。詳細品項將在與主辦單位及經紀公司溝通後，依其需求與規定進行最終確認。</span><span class="lang-ko">아티스트와 스태프에게 진심 어린 환영과 감사를 표하기 위해, 대만의 특색을 나타낼 수 있는 음식, 간식, 그리고 선물을 준비하고자 합니다. 상세 품목은 주최 측 및 소속사와 협의 후, 그들의 요구와 규정에 따라 최종 확정될 예정입니다.</span></p>
@@ -392,27 +441,30 @@
             <section id="fundraising" class="scroll-mt-20 p-0">
                 <h2 class="section-title font-serif"><span class="lang-zh">IV. 募資計畫</span><span class="lang-ko">IV. 펀딩 계획</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <h3 class="text-2xl font-bold text-accent-dark mb-4 font-serif"><span class="lang-zh">金額細估與階段式募資</span><span class="lang-ko">예산 상세 및 단계별 펀딩</span></h3>
                     <p class="mb-6 text-gray-700"><span class="lang-zh">為確保計畫執行順利並提高資金運用的透明度，我們將募資分為三階段。以場館人數500人為基礎進行初步估算：</span><span class="lang-ko">프로젝트의 원활한 진행과 자금 사용의 투명성을 높이기 위해, 펀딩을 세 단계로 나누어 진행합니다. 공연장 수용 인원 500명을 기준으로 초기 예산을 다음과 같이 추산합니다:</span></p>
                     <div class="space-y-6">
                         <div>
-                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第一階段：核心現場應援 (目標估算：NT$ 6,040)</span><span class="lang-ko">1단계: 핵심 현장 서포트 (목표 예상액: NT$ 6,040)</span></h4>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第一階段：核心現場應援 (目標估算：NT$ 6,600)</span><span class="lang-ko">1단계: 핵심 현장 서포트 (목표 예상액: NT$ 6,600)</span></h4>
                             <p class="text-sm text-gray-600"><span class="lang-zh">此階段為必要應援項目，確保所有入場粉絲都能參與。</span><span class="lang-ko">이 단계는 필수 서포트 항목으로, 모든 입장 관객이 참여할 수 있도록 보장합니다.</span></p>
                             <ul class="list-disc list-inside mt-2 text-gray-700">
-                                <li><span class="lang-zh">全場手幅 (估算500份) = NT$ 5,000</span><span class="lang-ko">전체 슬로건 (예상 500개) = NT$ 5,000</span></li>
-                                <li><span class="lang-zh">綠色玻璃紙 (2大張) = NT$ 40</span><span class="lang-ko">초록색 셀로판지 (2장) = NT$ 40</span></li>
-                                <li><span class="lang-zh">行政與雜支 (包裝、交通、預備金等) = NT$ 1,000</span><span class="lang-ko">행정 및 기타 비용 (포장, 교통, 예비비 등) = NT$ 1,000</span></li>
+                                <li><span class="lang-zh">全場手幅 (估算600份) = NT$ 6,000</span><span class="lang-ko">전체 슬로건 (예상 600개) = NT$ 6,000</span></li>
+                                <li><span class="lang-zh">綠色玻璃紙 (數張) = NT$ 100</span><span class="lang-ko">초록색 셀로판지 (여러 장) = NT$ 100</span></li>
+                                <li><span class="lang-zh">行政與雜支 (包裝、交通、預備金等) = NT$ 500</span><span class="lang-ko">행정 및 기타 비용 (포장, 교통, 예비비 등) = NT$ 500</span></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第二階段：後台餐飲應援 (目標估算：NT$ 4,125)</span><span class="lang-ko">2단계: 백스테이지 간식 및 음료 서포트 (목표 예상액: NT$ 4,125)</span></h4>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第二階段：後台餐飲應援 (目標估算：NT$ 4,750)</span><span class="lang-ko">2단계: 백스테이지 간식 및 음료 서포트 (목표 예상액: NT$ 4,750)</span></h4>
                             <p class="text-sm text-gray-600"><span class="lang-zh">第一階段達標後開啟，為藝人與韓方工作人員（約50位）準備台灣特色點心與飲品。</span><span class="lang-ko">1단계 목표 달성 후 시작되며, 아티스트와 한국 스태프(약 50명)를 위한 대만 특색 간식과 음료를 준비합니다.</span></p>
                             <ul class="list-disc list-inside mt-2 text-gray-700">
-                                <li><strong><span class="lang-zh">台灣特色零食: NT$ 625</span><span class="lang-ko">대만 특색 간식: NT$ 625</span></strong>
+                                <li><strong><span class="lang-zh">台灣特色零食: NT$ 1,250</span><span class="lang-ko">대만 특색 간식: NT$ 1,250</span></strong>
                                     <ul class="list-['\2013'] list-inside ml-4 text-sm">
-                                        <li><span class="lang-zh">義美小泡芙 x 5包 = NT$ 300</span><span class="lang-ko">이메이 퍼프 x 5봉지 = NT$ 300</span></li>
-                                        <li><span class="lang-zh">義美葡萄球巧克力 x 5盒 = NT$ 200</span><span class="lang-ko">이메이 포도알 초콜릿 x 5상자 = NT$ 200</span></li>
-                                        <li><span class="lang-zh">乖乖 x 5包 = NT$ 125</span><span class="lang-ko">乖乖 스낵 x 5봉지 = NT$ 125</span></li>
+                                        <li><span class="lang-zh">義美小泡芙 x 10包 = NT$ 600</span><span class="lang-ko">이메이 퍼프 x 10봉지 = NT$ 600</span></li>
+                                        <li><span class="lang-zh">義美葡萄球巧克力 x 10盒 = NT$ 400</span><span class="lang-ko">이메이 포도알 초콜릿 x 10상자 = NT$ 400</span></li>
+                                        <li><span class="lang-zh">乖乖 x 10包 = NT$ 250</span><span class="lang-ko">乖乖 스낵 x 10봉지 = NT$ 250</span></li>
                                     </ul>
                                 </li>
                                 <li><span class="lang-zh">手搖飲品 (50杯 x NT$ 70/杯) = NT$ 3,500</span><span class="lang-ko">버블티 음료 (50잔 x NT$ 70/잔) = NT$ 3,500</span></li>
@@ -436,20 +488,98 @@
             <section class="p-0">
                 <h2 class="section-title font-serif print-only"><span class="lang-zh">IV. 募資計畫</span><span class="lang-ko">IV. 펀딩 계획</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
+                    <h3 class="text-2xl font-bold text-accent-dark mb-4 text-center font-serif"><span class="lang-zh">募資回饋方案</span><span class="lang-ko">펀딩 리워드 플랜</span></h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                        <!-- Tier 1 -->
+                        <div class="border border-accent/30 rounded-lg p-6 bg-white/50 flex flex-col">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-3 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-12a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 007.5 18h9a2.25 2.25 0 002.25-2.25V8.25A2.25 2.25 0 0016.5 6h-9z" />
+                            </svg>
+                            <h4 class="font-bold text-lg text-accent-dark font-serif">初見香氣組</h4>
+                            <p class="text-2xl font-bold text-accent my-2">NT$ 126</p>
+                            <ul class="text-gray-700 space-y-1 text-sm flex-grow">
+                                <li>紀念票根 x1</li>
+                                <li>應援提袋 x1</li>
+                                <li>特製卡套 x1</li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-3 pt-3 border-t border-gray-200">(成本約 NT$36)</p>
+                        </div>
+                        <!-- Tier 2 -->
+                        <div class="border border-accent/50 rounded-lg p-6 bg-white/50 flex flex-col">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-3 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5h7.5m-7.5 3h7.5m-7.5 3h7.5m3-9l-3.375-3.375a5.25 5.25 0 00-7.425 0L3.375 7.5m0 0l3.375 3.375a5.25 5.25 0 007.425 0l3.375-3.375m-14.25 0L3 16.125a5.25 5.25 0 007.425 0l3.375-3.375" />
+                            </svg>
+                            <h4 class="font-bold text-lg text-accent-dark font-serif">回憶場景組</h4>
+                            <p class="text-2xl font-bold text-accent my-2">NT$ 326</p>
+                            <ul class="text-gray-700 space-y-1 text-sm flex-grow">
+                                <li>紀念票根 x1</li>
+                                <li>應援提袋 x1</li>
+                                <li>特製卡套 x1</li>
+                                <li><span class="font-bold text-accent-dark">Re:Scene 杯套 x1</span></li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-3 pt-3 border-t border-gray-200">(成本約 NT$75)</p>
+                        </div>
+                        <!-- Tier 3 -->
+                        <div class="border border-accent/70 rounded-lg p-6 bg-white/50 flex flex-col">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-3 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            </svg>
+                            <h4 class="font-bold text-lg text-accent-dark font-serif">綻放花途組</h4>
+                            <p class="text-2xl font-bold text-accent my-2">NT$ 526</p>
+                            <ul class="text-gray-700 space-y-1 text-sm flex-grow">
+                                <li>紀念票根 x1</li>
+                                <li>應援提袋 x1</li>
+                                <li>特製卡套 x1</li>
+                                <li>Re:Scene 杯套 x1</li>
+                                <li><span class="font-bold text-accent-dark">花路筆記本 x1</span></li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-3 pt-3 border-t border-gray-200">(成本約 NT$164)</p>
+                        </div>
+                        <!-- Tier 4 -->
+                        <div class="border border-accent rounded-lg p-6 bg-white/50 flex flex-col">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto mb-3 text-accent-dark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                               <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.31h5.418a.562.562 0 01.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 21.03a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988h5.418a.563.563 0 00.475-.31L11.48 3.5z" />
+                            </svg>
+                            <h4 class="font-bold text-lg text-accent-dark font-serif">永恆RE:member組</h4>
+                            <p class="text-2xl font-bold text-accent my-2">NT$ 1026</p>
+                            <ul class="text-gray-700 space-y-1 text-sm flex-grow">
+                                <li>紀念票根 x1</li>
+                                <li>應援提袋 x1</li>
+                                <li>特製卡套 x1</li>
+                                <li>Re:Scene 杯套 x1</li>
+                                <li>花路筆記本 x1</li>
+                                <li><span class="font-bold text-accent-dark">REMINE 紀念帽 x1</span></li>
+                            </ul>
+                            <p class="text-xs text-gray-500 mt-3 pt-3 border-t border-gray-200">(成本約 NT$323)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="print-page">
+            <section class="p-0">
+                <h2 class="section-title font-serif print-only"><span class="lang-zh">IV. 募資計畫</span><span class="lang-ko">IV. 펀딩 계획</span></h2>
+                <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <h3 class="text-2xl font-bold text-accent-dark mb-4 text-center font-serif"><span class="lang-zh">總預算細項 (估算)</span><span class="lang-ko">총 예산 상세 (예상)</span></h3>
                      <div class="space-y-4">
                         <div>
-                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第一階段 (總計: NT$ 6,040)</span><span class="lang-ko">1단계 (총액: NT$ 6,040)</span></h4>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第一階段 (總計: NT$ 6,600)</span><span class="lang-ko">1단계 (총액: NT$ 6,600)</span></h4>
                             <ul class="mt-2 space-y-2 text-gray-700">
-                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">全場手幅 (500份)</span><span class="lang-ko">전체 슬로건 (500개)</span></span><span class="font-semibold">NT$ 5,000</span></li>
-                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">綠色玻璃紙 (2大張)</span><span class="lang-ko">초록색 셀로판지 (2장)</span></span><span class="font-semibold">NT$ 40</span></li>
-                                <li class="flex justify-between"><span><span class="lang-zh">行政與雜支</span><span class="lang-ko">행정 및 기타 비용</span></span><span class="font-semibold">NT$ 1,000</span></li>
+                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">全場手幅 (600份)</span><span class="lang-ko">전체 슬로건 (600개)</span></span><span class="font-semibold">NT$ 6,000</span></li>
+                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">綠色玻璃紙 (數張)</span><span class="lang-ko">초록색 셀로판지 (여러 장)</span></span><span class="font-semibold">NT$ 100</span></li>
+                                <li class="flex justify-between"><span><span class="lang-zh">行政與雜支</span><span class="lang-ko">행정 및 기타 비용</span></span><span class="font-semibold">NT$ 500</span></li>
                             </ul>
                         </div>
                         <div>
-                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第二階段 (總計: NT$ 4,125)</span><span class="lang-ko">2단계 (총액: NT$ 4,125)</span></h4>
+                            <h4 class="font-bold text-lg text-accent-dark"><span class="lang-zh">第二階段 (總計: NT$ 4,750)</span><span class="lang-ko">2단계 (총액: NT$ 4,750)</span></h4>
                              <ul class="mt-2 space-y-2 text-gray-700">
-                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">台灣特色零食</span><span class="lang-ko">대만 특색 간식</span></span><span class="font-semibold">NT$ 625</span></li>
+                                <li class="flex justify-between border-b pb-1"><span><span class="lang-zh">台灣特色零食</span><span class="lang-ko">대만 특색 간식</span></span><span class="font-semibold">NT$ 1,250</span></li>
                                 <li class="flex justify-between"><span><span class="lang-zh">手搖飲品 (50杯)</span><span class="lang-ko">버블티 음료 (50잔)</span></span><span class="font-semibold">NT$ 3,500</span></li>
                             </ul>
                         </div>
@@ -469,6 +599,9 @@
             <section class="p-0">
                 <h2 class="section-title font-serif print-only"><span class="lang-zh">IV. 募資計畫</span><span class="lang-ko">IV. 펀딩 계획</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <h3 class="text-2xl font-bold text-accent-dark mb-4 text-center font-serif"><span class="lang-zh">預算總覽 (估算)</span><span class="lang-ko">예산 개요 (예상)</span></h3>
                     <div class="chart-container">
                         <canvas id="budgetChart"></canvas>
@@ -481,6 +614,9 @@
             <section id="manpower" class="scroll-mt-20 p-0">
                 <h2 class="section-title font-serif"><span class="lang-zh">VI. 人力規劃與任務分配</span><span class="lang-ko">VI. 인력 계획 및 업무 분담</span></h2>
                 <div class="card space-y-6">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <div>
                         <h3 class="text-xl font-bold text-accent-dark mb-3 font-serif"><span class="lang-zh">核心管理與分工</span><span class="lang-ko">핵심 운영 및 업무 분담</span></h3>
                         <p class="mb-4 text-gray-700"><span class="lang-zh">為確保企劃順利推進，團隊已完成初步任務分配，各組負責人與成員如下：</span><span class="lang-ko">프로젝트의 원활한 진행을 위해 팀은 초기 업무 분담을 완료했으며, 각 팀의 책임자와 구성원은 다음과 같습니다:</span></p>
@@ -503,6 +639,9 @@
             <section id="team-info" class="scroll-mt-20 p-0">
                 <h2 class="section-title font-serif"><span class="lang-zh">VII. 團隊資訊</span><span class="lang-ko">VII. 팀 정보</span></h2>
                 <div class="card">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <ul class="space-y-4 text-gray-800">
                         <li class="flex flex-col sm:flex-row">
                             <strong class="w-full sm:w-1/4 mb-1 sm:mb-0"><span class="lang-zh">應援團隊名稱</span><span class="lang-ko">서포트 팀명</span>:</strong>
@@ -531,6 +670,9 @@
             <section id="timeline" class="scroll-mt-20 p-0">
                 <h2 class="section-title font-serif"><span class="lang-zh">VIII. 執行時程規劃</span><span class="lang-ko">VIII. 실행 일정 계획</span></h2>
                 <div class="card space-y-8">
+                    <button class="capture-btn" title="下載此區塊截圖">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </button>
                     <div>
                         <h3 class="text-xl font-bold text-accent-dark mb-4 text-center"><span class="lang-zh">2025 年 9 月</span><span class="lang-ko">2025년 9월</span></h3>
                         <div class="bg-accent-light/30 rounded-lg p-4">
@@ -549,11 +691,11 @@
                                 <div class="py-2">2</div>
                                 <div class="py-2">3</div>
                                 <div class="py-2 border-2 border-green-400 rounded-lg bg-green-100">4<br><span class="text-xs lang-zh">入選<br>公告</span><span class="text-xs lang-ko">선정<br>발표</span></div>
-                                <div class="py-2 border-2 border-blue-300 rounded-lg bg-blue-100">5<br><span class="text-xs lang-zh">公布<br>影片募集</span><span class="text-xs lang-ko">영상<br>모집 공지</span></div>
-                                <div class="py-2">6</div>
-                                <div class="py-2 border-2 border-yellow-400 rounded-lg bg-yellow-100">7<br><span class="text-xs lang-zh">集資<br>開始</span><span class="text-xs lang-ko">펀딩<br>시작</span></div>
+                                <div class="py-2">5</div>
+                                <div class="py-2 border-2 border-blue-300 rounded-lg bg-blue-100">6<br><span class="text-xs lang-zh">公布<br>影片募集</span><span class="text-xs lang-ko">영상<br>모집 공지</span></div>
+                                <div class="py-2">7</div>
                                 <div class="py-2">8</div>
-                                <div class="py-2">9</div>
+                                <div class="py-2 border-2 border-yellow-400 rounded-lg bg-yellow-100">9<br><span class="text-xs lang-zh">集資<br>開始</span><span class="text-xs lang-ko">펀딩<br>시작</span></div>
                                 <div class="py-2">10</div>
                                 <div class="py-2">11</div>
                                 <div class="py-2 border-2 border-blue-400 rounded-lg bg-blue-100">12<br><span class="text-xs lang-zh">影片截止<br>手幅提交</span><span class="text-xs lang-ko">영상 마감<br>슬로건 제출</span></div>
@@ -590,8 +732,8 @@
                             <h4 class="font-bold text-lg text-accent-dark font-serif"><span class="lang-zh">階段二：9/4 入選後時程</span><span class="lang-ko">2단계: 9/4 선정 후 일정</span></h4>
                              <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1">
                                 <li><strong class="text-accent-dark"><span class="lang-zh">(公關/宣傳)</span><span class="lang-ko">(홍보/마케팅)</span></strong> <span class="lang-zh">9/4: 正式發布入選公告。</span><span class="lang-ko">9/4: 선정 공지 정식 발표.</span></li>
-                                <li><strong class="text-accent-dark"><span class="lang-zh">(公關/宣傳、影片組)</span><span class="lang-ko">(홍보/마케팅, 영상팀)</span></strong> <span class="lang-zh">9/5: 公布影片素材的募集辦法與規格。</span><span class="lang-ko">9/5: 영상 소스 모집 방법 및 규격 공지.</span></li>
-                                <li><strong class="text-accent-dark"><span class="lang-zh">(公關/宣傳、財務)</span><span class="lang-ko">(홍보/마케팅, 재무)</span></strong> <span class="lang-zh">9/7: 啟動第一階段募資。</span><span class="lang-ko">9/7: 1단계 펀딩 시작.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">(公關/宣傳、影片組)</span><span class="lang-ko">(홍보/마케팅, 영상팀)</span></strong> <span class="lang-zh">9/6: 公布影片素材的募集辦法與規格。</span><span class="lang-ko">9/6: 영상 소스 모집 방법 및 규격 공지.</span></li>
+                                <li><strong class="text-accent-dark"><span class="lang-zh">(公關/宣傳、財務)</span><span class="lang-ko">(홍보/마케팅, 재무)</span></strong> <span class="lang-zh">9/9: 啟動第一階段募資。</span><span class="lang-ko">9/9: 1단계 펀딩 시작.</span></li>
                                 <li><strong class="text-accent-dark"><span class="lang-zh">(影片組、設計組、總召)</span><span class="lang-ko">(영상팀, 디자인팀, 총괄)</span></strong> <span class="lang-zh">9/12: 影片素材募集截止；手幅最終設計稿提交主辦方審核。</span><span class="lang-ko">9/12: 영상 소스 모집 마감; 슬로건 최종 디자인 시안 주최 측에 검토 요청.</span></li>
                                 <li><strong class="text-accent-dark"><span class="lang-zh">(影片組、總召)</span><span class="lang-ko">(영상팀, 총괄)</span></strong> <span class="lang-zh">9/17: 影片初剪提交主辦方審核。</span><span class="lang-ko">9/17: 영상 1차 편집본 주최 측에 검토 요청.</span></li>
                             </ul>
@@ -639,7 +781,7 @@
                     labels: translations.zh.chartLabels,
                     datasets: [{
                         label: '預算分配',
-                        data: [41.7, 22.5, 25, 10.8],
+                        data: [53.9, 22.3, 18.3, 5.5],
                         backgroundColor: ['#A08FB0', '#B8A9C9', '#D9D1E0', '#E9E3ED'],
                         borderColor: '#F5F3F7',
                         borderWidth: 4,
@@ -754,6 +896,38 @@
 
             window.addEventListener('scroll', setActiveLink);
             setActiveLink();
+
+            // Screenshot functionality
+            document.querySelectorAll('.capture-btn').forEach(button => {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const card = this.closest('.card');
+                    const titleElement = card.querySelector('h2, h3');
+                    let fileName = 'RESCENE_企劃書截圖';
+                    if (titleElement) {
+                       fileName = titleElement.querySelector('.lang-zh') ? titleElement.querySelector('.lang-zh').innerText.trim().replace(/[\s\W]+/g, '_') : titleElement.innerText.trim().replace(/[\s\W]+/g, '_');
+                    }
+                    
+                    // Temporarily hide the button itself during capture
+                    button.style.display = 'none';
+
+                    html2canvas(card, {
+                        useCORS: true,
+                        allowTaint: true,
+                        backgroundColor: null, // Use the element's background
+                        scale: 2 // Increase resolution for better quality
+                    }).then(canvas => {
+                        const link = document.createElement('a');
+                        link.download = `${fileName}.png`;
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                        button.style.display = 'block';
+                    }).catch(err => {
+                        console.error("截圖失敗:", err);
+                        button.style.display = 'block';
+                    });
+                });
+            });
         });
     </script>
 </body>
